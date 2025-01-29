@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AlphaVantageApiService } from '../../infrastructure/alpha-vantage-api/alpha-vantage-api.service';
 import { CurrencyPairManagerService } from '../../services/currency-pair-manager/currency-pair-manager.service';
 import { FormsModule } from '@angular/forms';
+import { CurrencyPair } from '../../services/currency-pair-manager/models';
 
 @Component({
 	selector: 'app-add-currency-dialog',
@@ -35,8 +36,7 @@ export class AddCurrencyDialogComponent {
 			.subscribe((data) => {
 				const currentPairs = this._currencyPairManagerService.currencyPairs();
 				const currencyData = data['Realtime Currency Exchange Rate'];
-
-				currentPairs.push({
+				const newCurrencyPair: CurrencyPair = {
 					fromCurrencyCode: currencyData['1. From_Currency Code'],
 					fromCurrencyName: currencyData['2. From_Currency Name'],
 					toCurrencyCode: currencyData['3. To_Currency Code'],
@@ -46,7 +46,12 @@ export class AddCurrencyDialogComponent {
 					timeZone: currencyData['7. Time Zone'],
 					bidPrice: currencyData['8. Bid Price'],
 					askPrice: currencyData['9. Ask Price'],
-				});
+				};
+
+				this._currencyPairManagerService.currencyPairs.set([
+					...currentPairs,
+					newCurrencyPair,
+				]);
 			});
 	}
 }
