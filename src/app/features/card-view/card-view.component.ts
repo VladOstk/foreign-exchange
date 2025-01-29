@@ -20,7 +20,7 @@ export class CardViewComponent {
 			currencyPair: `${data.fromCurrencyCode}${data.toCurrencyCode}`,
 			exchangeRate: data.exchangeRate,
 			title: 'FX Live - Exchange Rates',
-			lastFetched: new Date().toISOString(),
+			lastFetched: this._currencyPairManagerService.dateLastUpdated(),
 		}));
 	});
 }

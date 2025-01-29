@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { CurrencyPair } from './models';
 
 @Injectable({
@@ -18,4 +18,10 @@ export class CurrencyPairManagerService {
 			askPrice: '155.33000000',
 		},
 	]);
+
+	dateLastUpdated = computed<string>(() => {
+		this.currencyPairs();
+
+		return new Date().toISOString();
+	});
 }
