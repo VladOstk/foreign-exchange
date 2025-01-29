@@ -1,11 +1,13 @@
 import { Route, Routes } from '@angular/router';
-import { CardViewComponent } from './features/card-view/card-view.component';
 
 export const cardRoutePath = 'card';
 export const cardRoute: Route = {
 	path: cardRoutePath,
 	title: 'Card',
-	component: CardViewComponent,
+	loadComponent: () =>
+		import('./features/card-view/card-view.component').then(
+			(m) => m.CardViewComponent,
+		),
 };
 
 export const gridRoutePath = 'grid';
