@@ -3,6 +3,7 @@
 @mixin variables {
 	--primary-color: oklch(60.88% 0.1702 257.29);
 	--text-color: oklch(0 0 0 / 65%);
+	--subtext-color: oklch(0 0 0 / 70%);
 
 	// material variables
 	--mat-sys-primary: var(--primary-color);

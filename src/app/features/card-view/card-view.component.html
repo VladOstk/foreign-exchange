@@ -1,1 +1,6 @@
-<p>card-view works!</p>
+@for (card of currencyPairCards(); track card.currencyPair) {
+	<app-currency-pair-card
+		[currencyPair]="card"
+		class="currency-card"
+	></app-currency-pair-card>
+}

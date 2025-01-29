@@ -1,0 +1,12 @@
+:host {
+	display: flex;
+	gap: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-bottom: 1rem;
+	flex-wrap: wrap;
+}
+
+.currency-card {
+	max-width: 18rem;
+}
