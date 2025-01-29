@@ -1,1 +1,12 @@
-<p>add-currency-dialog works!</p>
+<div mat-dialog-title>Add Currency</div>
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <input [(ngModel)]="currencyPair" matInput type="text">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+	<button mat-button type="button" mat-dialog-close>Cancel</button>
+	<button mat-button type="button" (click)="onAddClick()">Add</button>
+</div>
