@@ -2,10 +2,10 @@ import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { AlphaVantageApiService } from '../../infrastructure/alpha-vantage-api/alpha-vantage-api.service';
-import { AlphaVantageGetResponse } from '../../infrastructure/alpha-vantage-api/models';
-import { CurrencyPairManagerService } from '../../services/currency-pair-manager/currency-pair-manager.service';
-import { CurrencyPair } from '../../services/currency-pair-manager/models';
+import { AlphaVantageApiService } from '../../shared/infrastructure/alpha-vantage-api/alpha-vantage-api.service';
+import { AlphaVantageGetResponse } from '../../shared/infrastructure/alpha-vantage-api/models';
+import { CurrencyPairManagerService } from '../../shared/services/currency-pair-manager/currency-pair-manager.service';
+import { CurrencyPair } from '../../shared/services/currency-pair-manager/models';
 import { AddCurrencyDialogService } from './add-currency-dialog.service';
 
 describe('AddCurrencyDialogService', () => {

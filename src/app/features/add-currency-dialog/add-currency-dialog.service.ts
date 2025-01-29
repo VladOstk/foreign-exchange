@@ -1,10 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { tap } from 'rxjs';
 
-import { CurrencyPair } from '../../services/currency-pair-manager/models';
-import { AlphaVantageGetResponse } from '../../infrastructure/alpha-vantage-api/models';
-import { CurrencyPairManagerService } from '../../services/currency-pair-manager/currency-pair-manager.service';
-import { AlphaVantageApiService } from '../../infrastructure/alpha-vantage-api/alpha-vantage-api.service';
+import { CurrencyPair } from '../../shared/services/currency-pair-manager/models';
+import { AlphaVantageGetResponse } from '../../shared/infrastructure/alpha-vantage-api/models';
+import { CurrencyPairManagerService } from '../../shared/services/currency-pair-manager/currency-pair-manager.service';
+import { AlphaVantageApiService } from '../../shared/infrastructure/alpha-vantage-api/alpha-vantage-api.service';
 
 @Injectable({
 	providedIn: 'root',
