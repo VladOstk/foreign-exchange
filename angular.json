@@ -112,10 +112,10 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "foreign-exchange:serve",
-            "watch": true,
-            "headless": false
-          },
+						"devServerTarget": "foreign-exchange:serve",
+						"watch": false,
+						"headless": true
+					},
           "configurations": {
             "production": {
               "devServerTarget": "foreign-exchange:serve:production"
