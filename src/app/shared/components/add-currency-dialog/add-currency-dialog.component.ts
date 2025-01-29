@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AlphaVantageApiService } from '../../infrastructure/alpha-vantage-api/alpha-vantage-api.service';
@@ -26,6 +26,7 @@ export class AddCurrencyDialogComponent {
 
 	private _alphaVantageApiService = inject(AlphaVantageApiService);
 	private _currencyPairManagerService = inject(CurrencyPairManagerService);
+	private _dialog = inject(MatDialog);
 
 	onAddClick() {
 		const fromCurrencyCode = this.currencyPair().slice(0, 3);
@@ -52,6 +53,8 @@ export class AddCurrencyDialogComponent {
 					...currentPairs,
 					newCurrencyPair,
 				]);
+
+				this._dialog.closeAll();
 			});
 	}
 }

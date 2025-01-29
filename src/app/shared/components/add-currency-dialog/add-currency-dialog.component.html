@@ -2,8 +2,17 @@
 
 <div mat-dialog-content>
     <mat-form-field>
-        <input [(ngModel)]="currencyPair" matInput type="text">
+        <input #control="ngModel" [(ngModel)]="currencyPair" matInput type="text" required minlength="6" maxlength="6" pattern="[A-Z]+">
     </mat-form-field>
+    @if(control.hasError('required')) {
+        <mat-error>Please enter currency pair</mat-error>
+    }
+    @if(control.hasError('maxlength') || control.hasError('minlength')) {
+        <mat-error>Please enter 2 currencies</mat-error>
+    }
+    @if(control.hasError('pattern') || control.hasError('minlength')) {
+        <mat-error>Please follow next format: USDEUR</mat-error>
+    }
 </div>
 
 <div mat-dialog-actions>
