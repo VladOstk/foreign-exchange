@@ -3,6 +3,7 @@
 <div mat-dialog-content>
 	<mat-form-field>
 		<input
+			data-testid="add-currency-input"
 			#control="ngModel"
 			[(ngModel)]="currencyPair"
 			[ngModelOptions]="{ updateOn: 'blur' }"
@@ -12,21 +13,27 @@
 			minlength="6"
 			maxlength="6"
 			pattern="[A-Z]+"
-            placeholder="Currency Pair"
+			placeholder="Currency Pair"
 		/>
 	</mat-form-field>
 	@if (control.touched && control.hasError('required')) {
-		<mat-error>Please enter currency pair</mat-error>
+		<mat-error data-testid="error-message"
+			>Please enter currency pair</mat-error
+		>
 	}
 	@if (control.hasError('pattern') || control.hasError('minlength')) {
-		<mat-error>Please follow next format: USDEUR</mat-error>
+		<mat-error data-testid="error-message"
+			>Please follow next format: USDEUR</mat-error
+		>
 	}
 	@if (networkError()) {
-		<mat-error>A network error has occured</mat-error>
+		<mat-error data-testid="error-message"
+			>A network error has occured</mat-error
+		>
 	}
 </div>
 
 <div mat-dialog-actions>
-	<button mat-button type="button" mat-dialog-close>Cancel</button>
-	<button mat-button type="button" (click)="onAddClick()">Add</button>
+	<button mat-button type="button" mat-dialog-close data-testid="cancel-button">Cancel</button>
+	<button mat-button type="button" (click)="onAddClick()" data-testid="add-button">Add</button>
 </div>
