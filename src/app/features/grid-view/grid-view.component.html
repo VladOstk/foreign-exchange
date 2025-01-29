@@ -1,1 +1,6 @@
-<p>grid-view works!</p>
+<app-grid
+	class="grid"
+	[rowData]="gridViewService.rowData()"
+	[colDefs]="gridViewColDefs"
+	[modules]="modules"
+></app-grid>
