@@ -1,0 +1,10 @@
+@for (item of items(); track item.path) {
+	<a
+		mat-button
+		[routerLink]="item.path"
+		routerLinkActive="active-button"
+		[disableRipple]="disableRipple"
+	>
+		{{ item.label }}
+	</a>
+}
