@@ -1,0 +1,10 @@
+@for (item of items(); track item.id) {
+	<button
+		mat-button
+		[disableRipple]="disableRipple"
+		[class.active-button]="currentActiveItem() === item.id"
+		(click)="onButtonClick(item)"
+	>
+		{{ item.label }}
+	</button>
+}
