@@ -1,0 +1,17 @@
+<nav class="navbar-container">
+	<div class="navbar-section">
+		<ng-content select="actions-left"></ng-content>
+	</div>
+
+	<app-button-group
+		class="navbar-section button-group"
+		[items]="buttonGroup()"
+		[disableRipple]="true"
+		(activeItem)="onActiveItemChange($event)"
+	>
+	</app-button-group>
+
+	<div class="navbar-section actions-right">
+		<ng-content select="actions-right"></ng-content>
+	</div>
+</nav>
