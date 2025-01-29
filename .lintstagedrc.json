@@ -1,4 +1,8 @@
 {
-  "*.{css,scss}": ["prettier --write"],
-  "*.{js,ts}": ["prettier --write", "eslint --ignore-path .gitignore --fix"]
+	"*.{css,scss}": ["prettier --write"],
+	"*.{js,ts}": [
+		"prettier --write",
+		"eslint --ignore-path .gitignore --fix",
+		"npm run test:ci"
+	]
 }
