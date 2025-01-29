@@ -1,0 +1,16 @@
+<mat-card class="card" appearance="outlined">
+	<mat-card-header>
+		<mat-card-title>
+			{{ currencyPair().title }}
+		</mat-card-title>
+		<mat-card-subtitle>
+			{{ currencyPair().currencyPair }}
+		</mat-card-subtitle>
+	</mat-card-header>
+	<mat-card-content class="text-content">
+		{{ currencyPair().exchangeRate | number: '1.3-3' }}
+	</mat-card-content>
+	<mat-card-footer class="card-footer subtext">
+		{{ currencyPair().lastFetched | date: 'MM/dd/yy, hh:mm a' }}
+	</mat-card-footer>
+</mat-card>
